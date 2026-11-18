@@ -1,0 +1,24 @@
+{
+  "name": "p2-api-productos",
+  "version": "1.0.0",
+  "description": "Práctica 2: API REST propia de productos con Node.js y Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "api",
+    "rest",
+    "express",
+    "nodejs",
+    "crud",
+    "productos"
+  ],
+  "author": "Nathanael Boche Herrada",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}
