@@ -10,7 +10,6 @@ const ARCHIVO = "productos.json";
 app.use(cors());
 app.use(express.json());
 
-// Reto 3: Cargar productos desde productos.json si existe
 let productos = [
   { id: 1, nombre: "Teclado", precio: 350, stock: 10 },
   { id: 2, nombre: "Mouse", precio: 180, stock: 25 }
@@ -27,8 +26,6 @@ let siguienteId = productos.length > 0 ? Math.max(...productos.map(p => p.id)) +
 function guardarDatos() {
   fs.writeFileSync(ARCHIVO, JSON.stringify(productos, null, 2));
 }
-
-// Reto 2: Documentación Swagger UI en /api-docs
 const swaggerDoc = {
   openapi: "3.0.0",
   info: { title: "API de Productos - P2", version: "1.0.0" },
@@ -84,7 +81,6 @@ app.get("/", (req, res) => {
   res.json({ mensaje: "API de productos funcionando" });
 });
 
-// Reto 1: Búsqueda por nombre con ?buscar=
 app.get("/api/productos", (req, res) => {
   const { buscar } = req.query;
   if (buscar) {
